@@ -19,7 +19,7 @@ import {
 
 interface ChartData {
   name: string
-  value: number
+  [key: string]: string | number
 }
 
 interface ChartProps {
@@ -32,9 +32,17 @@ interface ChartProps {
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8', '#82CA9D']
 
 export function Chart({ data, type, height = 300, width }: ChartProps) {
+  // Get all numeric keys except 'name' for multi-series charts
+  const getDataKeys = () => {
+    if (data.length === 0) return []
+    const keys = Object.keys(data[0]).filter(key => key !== 'name')
+    return keys.filter(key => typeof data[0][key] === 'number')
+  }
+
   const renderChart = () => {
     switch (type) {
       case 'line':
+        const lineKeys = getDataKeys()
         return (
           <ResponsiveContainer width={width || '100%'} height={height}>
             <LineChart data={data}>
@@ -43,19 +51,23 @@ export function Chart({ data, type, height = 300, width }: ChartProps) {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Line
-                type="monotone"
-                dataKey="value"
-                stroke="#8884d8"
-                strokeWidth={2}
-                dot={{ fill: '#8884d8', strokeWidth: 2, r: 4 }}
-                activeDot={{ r: 6 }}
-              />
+              {lineKeys.map((key, index) => (
+                <Line
+                  key={key}
+                  type="monotone"
+                  dataKey={key}
+                  stroke={COLORS[index % COLORS.length]}
+                  strokeWidth={2}
+                  dot={{ fill: COLORS[index % COLORS.length], strokeWidth: 2, r: 4 }}
+                  activeDot={{ r: 6 }}
+                />
+              ))}
             </LineChart>
           </ResponsiveContainer>
         )
 
       case 'bar':
+        const barKeys = getDataKeys()
         return (
           <ResponsiveContainer width={width || '100%'} height={height}>
             <BarChart data={data}>
@@ -64,12 +76,15 @@ export function Chart({ data, type, height = 300, width }: ChartProps) {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="value" fill="#8884d8" />
+              {barKeys.map((key, index) => (
+                <Bar key={key} dataKey={key} fill={COLORS[index % COLORS.length]} />
+              ))}
             </BarChart>
           </ResponsiveContainer>
         )
 
       case 'pie':
+        // Pie chart still uses 'value' key
         return (
           <ResponsiveContainer width={width || '100%'} height={height}>
             <PieChart>
@@ -78,7 +93,7 @@ export function Chart({ data, type, height = 300, width }: ChartProps) {
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                label={({ name, percent }) => `${name} ${((percent || 0) * 100).toFixed(0)}%`}
                 outerRadius={80}
                 fill="#8884d8"
                 dataKey="value"

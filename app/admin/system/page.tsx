@@ -25,6 +25,7 @@ import {
   DollarSign
 } from 'lucide-react'
 import { useSupabase } from '@/components/supabase-context'
+import { useAuth } from '@/components/auth-context'
 import { SystemStatusService } from '@/lib/services/system-status'
 import { format } from 'date-fns'
 
@@ -51,6 +52,7 @@ interface SystemStats {
 
 export default function SystemPage() {
   const { supabase } = useSupabase()
+  const { user } = useAuth()
   const [systemStatus, setSystemStatus] = useState<SystemStatus[]>([])
   const [systemStats, setSystemStats] = useState<SystemStats | null>(null)
   const [loading, setLoading] = useState(true)
@@ -75,8 +77,19 @@ export default function SystemPage() {
       setLoading(true)
       
       // Fetch system status
-      const statusData = await SystemStatusService.getSystemStatus()
-      setSystemStatus(statusData)
+      const statusData = await SystemStatusService.getCurrentStatus()
+      // Convert single status to array format expected by component
+      if (statusData) {
+        setSystemStatus([{
+          id: statusData.id,
+          service: 'System',
+          status: statusData.status === 'online' ? 'online' : statusData.status === 'offline' ? 'offline' : 'degraded',
+          last_check: statusData.updated_at,
+          notes: statusData.message
+        }])
+      } else {
+        setSystemStatus([])
+      }
 
       // Fetch system stats
       const [usersResult, appsResult, payoutsResult, analyticsResult] = await Promise.all([
@@ -127,15 +140,23 @@ export default function SystemPage() {
     try {
       setSaving(true)
       
-      await SystemStatusService.updateSystemStatus(statusId, {
-        status: newStatus as 'online' | 'offline' | 'degraded',
-        notes: notes || '',
-        last_check: new Date().toISOString()
-      })
+      // Convert 'degraded' to 'maintenance' for the service
+      const serviceStatus = newStatus === 'degraded' ? 'maintenance' : newStatus as 'online' | 'offline' | 'maintenance'
+      const updatedBy = user?.id || 'unknown'
+      
+      const success = await SystemStatusService.updateStatus(
+        serviceStatus,
+        notes || '',
+        updatedBy
+      )
 
-      setMessage('System status updated successfully!')
-      await fetchSystemData()
-      setIsEditOpen(false)
+      if (success) {
+        setMessage('System status updated successfully!')
+        await fetchSystemData()
+        setIsEditOpen(false)
+      } else {
+        setMessage('Error updating system status')
+      }
     } catch (error) {
       console.error('Error updating system status:', error)
       setMessage('Error updating system status')

@@ -1,6 +1,6 @@
 'use client'
 
-import { useAuth } from './auth-context'
+import { useAuth } from '@/components/auth-context'
 import { useAdminRole } from '@/components/use-admin-role'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Header } from '@/components/header'

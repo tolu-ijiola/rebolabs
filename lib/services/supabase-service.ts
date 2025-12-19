@@ -342,7 +342,7 @@ export const dashboardStatsService = {
 
       const revenueByProduct = Object.entries(revenueByHistoryType).map(([name, value]) => ({
         name,
-        value: Math.round(value)
+        value: Math.round(value as number)
       }))
 
       return {

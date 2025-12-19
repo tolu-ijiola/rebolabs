@@ -122,13 +122,24 @@ export default function AdminDashboardPage() {
           systemStatus: systemStatus?.status || 'offline'
         })
 
-        setRecentActivities(activities?.map(a => ({
-          id: a.id,
-          action: a.action,
-          user_email: Array.isArray(a.users) ? a.users[0]?.email : a.users?.email,
-          resource_type: a.resource_type,
-          created_at: a.created_at
-        })) || [])
+        setRecentActivities(activities?.map((a: any) => {
+          const userData = a.users
+          let userEmail: string | undefined
+          
+          if (Array.isArray(userData)) {
+            userEmail = userData[0]?.email
+          } else if (userData && typeof userData === 'object') {
+            userEmail = userData.email
+          }
+          
+          return {
+            id: a.id,
+            action: a.action,
+            user_email: userEmail,
+            resource_type: a.resource_type,
+            created_at: a.created_at
+          }
+        }) || [])
 
       } catch (error) {
         console.error('Error fetching dashboard data:', error)

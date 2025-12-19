@@ -224,8 +224,8 @@ export default function ReportsPage() {
           </div>
           <div className="flex-shrink-0">
             <DateRangePicker
-              dateRange={dateRange}
-              onDateRangeChange={setDateRange}
+              date={dateRange}
+              onDateChange={setDateRange}
             />
           </div>
         </div>

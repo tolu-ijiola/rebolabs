@@ -107,7 +107,6 @@ export interface Database {
           reconciliation_amount: number
           status: 'pending' | 'paid' | 'failed'
           payment_method: string
-          transaction_id: string | null
           revenue_months: string[]
           reconciliation_months: string[]
           invoiced_at: string | null
@@ -121,7 +120,6 @@ export interface Database {
           reconciliation_amount: number
           status?: 'pending' | 'paid' | 'failed'
           payment_method: string
-          transaction_id?: string | null
           revenue_months?: string[]
           reconciliation_months?: string[]
           invoiced_at?: string | null
@@ -135,7 +133,6 @@ export interface Database {
           reconciliation_amount?: number
           status?: 'pending' | 'paid' | 'failed'
           payment_method?: string
-          transaction_id?: string | null
           revenue_months?: string[]
           reconciliation_months?: string[]
           invoiced_at?: string | null

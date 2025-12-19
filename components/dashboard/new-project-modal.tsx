@@ -44,13 +44,23 @@ export function NewProjectModal({ open, onOpenChange, onProjectCreated }: NewPro
     try {
       const app_id = `app_${formData.name.toLowerCase().replace(/ /g, '_')}_${Math.random().toString(36).substr(2, 9)}`
       
+      // Generate secret keys
+      const secret_key = `sk_${Math.random().toString(36).substring(2, 15)}${Math.random().toString(36).substring(2, 15)}`
+      const server_key = `pk_${Math.random().toString(36).substring(2, 15)}${Math.random().toString(36).substring(2, 15)}`
+      
       const projectData = {
         ...formData,
         app_id,
         user_id: user.id,
-        status: 'pending',
+        status: 'pending' as const,
         demo: true,
-        revenue: 0
+        revenue: 0,
+        custom_logo: null,
+        primary_color: null,
+        secret_key,
+        server_key,
+        reward_callback: null,
+        reconciliation_callback: null
       }
       
       const newProject = await createProject(projectData)

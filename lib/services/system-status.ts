@@ -38,6 +38,7 @@ export class SystemStatusService {
     updatedBy: string
   ): Promise<boolean> {
     try {
+      const supabase = createServerClient()
       const { error } = await supabase
         .from('system_status')
         .insert({

@@ -18,24 +18,36 @@ export async function POST(request: NextRequest) {
 
     console.log(`Processing monthly payouts for ${lastMonth}/${lastMonthYear}`)
 
-    // Get all users with earnings >= $100 for the previous month
-    const { data: userEarnings, error: earningsError } = await supabase
+    // Get all analytics records for the previous month
+    const { data: analyticsData, error: earningsError } = await supabase
       .from('analytics')
-      .select(`
-        publisher_id,
-        SUM(revenue_usd) as total_earnings
-      `)
+      .select('publisher_id, revenue_usd')
       .eq('month', lastMonth)
       .eq('year', lastMonthYear)
       .eq('history_type', 'reward')
       .gte('revenue_usd', 0)
-      .group('publisher_id')
-      .gte('total_earnings', 100)
 
     if (earningsError) {
-      console.error('Error fetching user earnings:', earningsError)
+      console.error('Error fetching analytics:', earningsError)
       return NextResponse.json({ error: 'Failed to fetch earnings' }, { status: 500 })
     }
+
+    // Group by publisher_id and sum earnings
+    const earningsMap = new Map<string, number>()
+    analyticsData?.forEach(item => {
+      if (item.publisher_id) {
+        const current = earningsMap.get(item.publisher_id) || 0
+        earningsMap.set(item.publisher_id, current + (item.revenue_usd || 0))
+      }
+    })
+
+    // Filter users with earnings >= $100
+    const userEarnings = Array.from(earningsMap.entries())
+      .filter(([_, total]) => total >= 100)
+      .map(([publisher_id, total_earnings]) => ({
+        publisher_id,
+        total_earnings: total_earnings.toString()
+      }))
 
     if (!userEarnings || userEarnings.length === 0) {
       return NextResponse.json({ 
@@ -126,7 +138,7 @@ export async function POST(request: NextRequest) {
           total_amount: processedPayouts.reduce((sum, p) => sum + parseFloat(p.amount), 0)
         },
         user_id: null, // System action
-        ip_address: request.ip || '127.0.0.1'
+        ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || '127.0.0.1'
       })
 
     if (logError) {

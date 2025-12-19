@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerClient } from '@/lib/supabase'
-import { dashboardService } from '@/lib/database'
+import { dashboardStatsService, projectService } from '@/lib/services/supabase-service'
 
 export async function GET(request: NextRequest) {
   try {
@@ -19,7 +19,9 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const stats = await dashboardService.getDashboardStats(user.id)
+    // Get user's projects first
+    const projects = await projectService.getProjects(user.id)
+    const stats = await dashboardStatsService.getDashboardStats(user.id, projects)
     return NextResponse.json(stats)
   } catch (error) {
     console.error('Error fetching analytics:', error)
