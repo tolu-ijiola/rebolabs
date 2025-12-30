@@ -14,7 +14,7 @@ export function RevenueCalculator() {
 
   return (
     <div className="animate-fadeIn">
-      <div className="bg-card rounded-3xl p-8 shadow-professional-lg hover-lift border border-border">
+      <div className="bg-card rounded-3xl p-8 max-w-xl mx-auto shadow-professional-lg hover-lift border border-border">
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold text-foreground mb-2">Revenue Calculator</h3>
           <p className="text-muted-foreground">See your potential earnings</p>

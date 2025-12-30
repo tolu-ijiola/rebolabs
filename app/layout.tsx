@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${dmSans.variable} font-sans antialiased`}>
+      <body className={`${dmSans.variable} font-sans antialiased mx-1 sm:mx-2 md:mx-4 lg:mx-6 xl:mx-8`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
