@@ -130,7 +130,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {projects && projects.length > 0 ? (
           projects.map((project) => (
           <Card key={project.id} className="bg-card border-border hover:shadow-lg transition-shadow flex flex-col overflow-hidden">
