@@ -1,0 +1,129 @@
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\Administrator\Documents\My Work\rebo\rebolabs-main\.next\static\development\_buildManifest.js.tmp.lqqepk0dfdk'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\Administrator\\Documents\\My Work\\rebo\\rebolabs-main\\.next\\static\\development\\_buildManifest.js.tmp.lqqepk0dfdk'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\Administrator\Documents\My Work\rebo\rebolabs-main\.next\static\development\_buildManifest.js.tmp.x65n4u50g09'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\Administrator\\Documents\\My Work\\rebo\\rebolabs-main\\.next\\static\\development\\_buildManifest.js.tmp.x65n4u50g09'
+}
+[Error: ENOENT: no such file or directory, open 'C:\Users\Administrator\Documents\My Work\rebo\rebolabs-main\.next\static\development\_buildManifest.js.tmp.lqqepk0dfdk'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\Administrator\\Documents\\My Work\\rebo\\rebolabs-main\\.next\\static\\development\\_buildManifest.js.tmp.lqqepk0dfdk'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'C:\Users\Administrator\Documents\My Work\rebo\rebolabs-main\.next\static\development\_buildManifest.js.tmp.fwcv3tikx7j'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\Administrator\\Documents\\My Work\\rebo\\rebolabs-main\\.next\\static\\development\\_buildManifest.js.tmp.fwcv3tikx7j'
+}
+[Error: ENOENT: no such file or directory, open 'C:\Users\Administrator\Documents\My Work\rebo\rebolabs-main\.next\static\development\_buildManifest.js.tmp.wmbrhnubjg'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\Administrator\\Documents\\My Work\\rebo\\rebolabs-main\\.next\\static\\development\\_buildManifest.js.tmp.wmbrhnubjg'
+}
+[Error: unrecognized HMR message "{"event":"client-file-logs","logs":[{"timestamp":"09:32:27.935","level":"LOG","message":"[ChromeTransport] chromePort disconnected"}]}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"client-file-logs","logs":[{"timestamp":"09:32:27.935","level":"LOG","message":"[ChromeTransport] chromePort disconnected"}]}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"client-file-logs","logs":[{"timestamp":"09:32:27.935","level":"LOG","message":"[ChromeTransport] chromePort disconnected"}]}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"ping"}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"ping"}"]
+[Error: unrecognized HMR message "{"event":"client-file-logs","logs":[{"timestamp":"18:04:00.905","level":"ERROR","message":"unhandledRejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c7192189._.js from module [turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)"}]}"]
+ ⨯ unhandledRejection: [Error: unrecognized HMR message "{"event":"client-file-logs","logs":[{"timestamp":"18:04:00.905","level":"ERROR","message":"unhandledRejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c7192189._.js from module [turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)"}]}"]
+ ⨯ unhandledRejection:  [Error: unrecognized HMR message "{"event":"client-file-logs","logs":[{"timestamp":"18:04:00.905","level":"ERROR","message":"unhandledRejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c7192189._.js from module [turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)"}]}"]
